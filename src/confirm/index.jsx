@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useConfirm } from "material-ui-confirm";
 
 // Sample data for contacts
 const initialContacts = [
@@ -23,11 +24,23 @@ const initialContacts = [
 ];
 
 const ContactList = () => {
+  const confirm = useConfirm();
   const [contacts, setContacts] = useState(initialContacts);
 
   // Function to handle the deletion of a contact
   const handleDelete = (id) => {
-    setContacts(contacts.filter((contact) => contact.id !== id));
+    confirm({
+      title: "Are you ready to delete",
+      description: "This will delete your contact permanently.",
+      confirmationText: "Delete now",
+      cancellationText: "Not now",
+    })
+      .then(() => {
+        setContacts(contacts.filter((contact) => contact.id !== id));
+      })
+      .catch(() => {
+        console.log("Cancellation delete.");
+      });
   };
 
   return (
