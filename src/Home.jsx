@@ -13,7 +13,7 @@ export default function Home() {
         color: "white",
       }}
     >
-      <h1>Integrate Stripe in MERN stack application</h1>
+      <h1>Integrate Paypal in Node js and React js stack application</h1>
       <Link
         style={{ color: "white", textDecoration: "underline" }}
         to="/subscriptions"

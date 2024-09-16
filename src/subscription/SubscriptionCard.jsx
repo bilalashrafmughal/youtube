@@ -1,23 +1,5 @@
 import React from "react";
-import axios from "axios";
-
-const handlePayment = async (duration, pkg) => {
-  console.log({ duration, pkg });
-  const response = await axios({
-    method: "post",
-    url: `http://localhost:8080/create-subscription`,
-    data: {
-      plan_name: pkg,
-      duration: duration,
-    },
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  if (response.data) {
-    window.location.href = response.data?.session?.url;
-  }
-};
+import PayPalButtonsComponent from "./PaypalButtonsComponent";
 
 const SubscriptionCard = ({
   type,
@@ -38,12 +20,7 @@ const SubscriptionCard = ({
           <li key={index}>{feature}</li>
         ))}
       </ul>
-      <button
-        onClick={() => handlePayment(duration, pkg)}
-        className="card-button"
-      >
-        Choose Plan
-      </button>
+      <PayPalButtonsComponent planName={pkg} duration={duration} />
     </div>
   );
 };
