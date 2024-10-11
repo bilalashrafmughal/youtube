@@ -1,0 +1,25 @@
+/* SubscriptionPlans.css */
+.subscription-card {
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner padding */
+    width: 300px;
+    transition: ease all 0.4s;
+  }
+  
+  .subscription-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .features-list {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  .features-list li {
+    margin-bottom: 10px; /* Space between features */
+    font-size: 16px; /* Font size for features */
+  }
+  
